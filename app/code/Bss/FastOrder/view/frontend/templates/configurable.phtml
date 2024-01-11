@@ -1,0 +1,42 @@
+<?php
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_FastOrder
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+?>
+<?php
+/**
+ * @var \Bss\FastOrder\Block\Product\Renderer\Configurable $block
+ */
+?>
+<?php
+$_helper = $this->helper('Bss\FastOrder\Helper\Data');
+?>
+<div class="bss-swatch-opt-<?php /* @escapeNotVerified */
+echo $block->getProduct()->getId() ?> bss-fastorder-swatch" data-preorder='<?php echo $block->getJsonChildProductData();?>'></div>
+<script type="text/x-magento-init">
+    {
+    "*":
+        {
+            "Bss_FastOrder/js/configurable": {
+                "productId": "<?php /* @escapeNotVerified */ echo $block->getProduct()->getId(); ?>",
+                "jsonConfig": <?php /* @escapeNotVerified */ echo $block->getJsonConfig(); ?>,
+                "jsonSwatchConfig": <?php /* @escapeNotVerified */ echo $block->getJsonSwatchConfig(); ?>,
+                "mediaCallback": "<?php /* @escapeNotVerified */ echo $block->getMediaCallback(); ?>",
+                "formatPrice": <?php echo $_helper->getFormatPrice();?>
+            }
+        }
+    }
+</script>

@@ -1,0 +1,108 @@
+"Configurable Grid Table View","Configurable Grid Table View"
+"Order configuable products faster - %1","Order configuable products faster - %1"
+"Request For Quote","Request For Quote"
+"Professionalize B2B pricing negotiation - %1
+                    <br>
+                    Please select ""Yes"" in ""Enable for other page"" in R4Q Module to fully active this function","Professionalize B2B pricing negotiation - %1
+                    <br>
+                    Please select ""Yes"" in ""Enable for other page"" in R4Q Module to fully active this function"
+Installed,Installed
+"Not Installed","Not Installed"
+Status,Status
+"Open Chooser","Open Chooser"
+Apply,Apply
+AM,AM
+PM,PM
+None,None
+"-- Please Select --","-- Please Select --"
+"Module is disabled","Module is disabled"
+"We can't add this item to your shopping cart right now.","We can't add this item to your shopping cart right now."
+"You added %1 to your shopping cart.","You added %1 to your shopping cart."
+"The file's format is not correct. Please download sample csv file and try again.","The file's format is not correct. Please download sample csv file and try again."
+"CSV import is only available for simple product(s) without custom option(s). %1 %2 not supported.","CSV import is only available for simple product(s) without custom option(s). %1 %2 not supported."
+"%1 do not match or do not exist on the site.","%1 do not match or do not exist on the site."
+"Import Complete.","Import Complete."
+"No Item Imported.","No Item Imported."
+"Something went wrong while reading file.","Something went wrong while reading file."
+"We can't import item to your table right now.","We can't import item to your table right now."
+"Please select product(s).","Please select product(s)."
+"SKU is not found or out of stock: %1","SKU is not found or out of stock: %1"
+"%1 do not match or wrong format SKU:Qty","%1 do not match or wrong format SKU:Qty"
+"List was updated","List was updated"
+"SKU not found or wrong format SKU:Qty","SKU not found or wrong format SKU:Qty"
+"'You can not add products to quote: ' .","'You can not add products to quote: ' ."
+"We can't add this item to your Quote right now.","We can't add this item to your Quote right now."
+"You added %1 to your Quote.","You added %1 to your Quote."
+"Add to Quote","Add to Quote"
+"Near mini cart","Near mini cart"
+"In top menu","In top menu"
+"In footer","In footer"
+"Searchbox in row","Searchbox in row"
+"Searchbox out row","Searchbox out row"
+Manual,Manual
+Automation,Automation
+"Fast Order","Fast Order"
+sample,sample
+"Select all","Select all"
+"Unselect all","Unselect all"
+"Please select one of the options.","Please select one of the options."
+"Enter product name or SKU","Enter product name or SKU"
+"Search product name or SKU","Search product name or SKU"
+"* Required Fields","* Required Fields"
+Price,Price
+SKU,SKU
+"Product Name","Product Name"
+Quantity,Quantity
+Search,Search
+Product,Product
+Qty,Qty
+Subtotal,Subtotal
+Edit,Edit
+Delete,Delete
+"Add lines","Add lines"
+"Filled Lines Number : ","Filled Lines Number : "
+"Total Qty : ","Total Qty : "
+"Sub Total : ","Sub Total : "
+"Enter <i>SKU:quantity</i> per row","Enter <i>SKU:quantity</i> per row"
+"Add to list","Add to list"
+Upload,Upload
+"Download .csv sample","Download .csv sample"
+"Add to cart","Add to cart"
+"Proceed to Checkout","Proceed to Checkout"
+"No Result","No Result"
+"Excl. Tax: ","Excl. Tax: "
+"Add to Form","Add to Form"
+"Grouped product items","Grouped product items"
+Availability,Availability
+"Out of stock","Out of stock"
+"No options of this product are available.","No options of this product are available."
+"Please specify the quantity of product(s).","Please specify the quantity of product(s)."
+Cancel,Cancel
+Select,Select
+Change,Change
+"Compatible file extensions to upload","Compatible file extensions to upload"
+"Maximum image width","Maximum image width"
+px.,px.
+"Maximum image height","Maximum image height"
+"Maximum number of characters:","Maximum number of characters:"
+" <p class=""total-price-tax""> Excl. Tax: "," <p class=""total-price-tax""> Excl. Tax: "
+Pre-Order,Pre-Order
+General,General
+Enabled,Enabled
+"Fast Order Form Template","Fast Order Form Template"
+"Number of Lines&nbsp;<span style=""color: #D40707;"">*</span>","Number of Lines&nbsp;<span style=""color: #D40707;"">*</span>"
+"Default lines shown.","Default lines shown."
+"Autocomplete Minimum Characters","Autocomplete Minimum Characters"
+"Number of characters entered to show autocompleted results","Number of characters entered to show autocompleted results"
+"Max Results to Show","Max Results to Show"
+"Number of results in the autocomplete box.","Number of results in the autocomplete box."
+"Main Color","Main Color"
+"Position of Fast Order Shortcut","Position of Fast Order Shortcut"
+"Shortcut URL Key","Shortcut URL Key"
+"Shortcut url key for fast order","Shortcut url key for fast order"
+"Enabled for Customer Groups","Enabled for Customer Groups"
+"Pre-populated Products","Pre-populated Products"
+Action,Action
+"Selected Products","Selected Products"
+"Max result to show&nbsp;<span style=""color: #D40707;"">*</span>","Max result to show&nbsp;<span style=""color: #D40707;"">*</span>"
+"Recommended Extensions","Recommended Extensions"

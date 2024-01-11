@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_FastOrder
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="header.links">
+            <block class="Bss\FastOrder\Block\FastOrderLink" name="fastorder-link" ifconfig="fastorder/general/enabled">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Fast Order</argument>
+                    <argument name="position" xsi:type="string">top-menu</argument>
+                    <argument name="path" xsi:type="helper" helper="Bss\FastOrder\Helper\Data::getUrlShortcut">
+                        <param name="name">value</param>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="top.links">
+            <block class="Bss\FastOrder\Block\FastOrderLink" name="fastorder-link-blank" ifconfig="fastorder/general/enabled">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Fast Order</argument>
+                    <argument name="position" xsi:type="string">top-menu</argument>
+                    <argument name="path" xsi:type="helper" helper="Bss\FastOrder\Helper\Data::getUrlShortcut">
+                        <param name="name">value</param>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="footer_links">
+            <block class="Bss\FastOrder\Block\FastOrderLink" name="fastorder-link-footer" ifconfig="fastorder/general/enabled" before="-">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Fast Order</argument>
+                    <argument name="position" xsi:type="string">footer</argument>
+                    <argument name="path" xsi:type="helper" helper="Bss\FastOrder\Helper\Data::getUrlShortcut">
+                        <param name="name">value</param>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceContainer name="header-wrapper">
+            <block class="Bss\FastOrder\Block\FastOrderLinkCart" name="fastorder-link-shopping-cart" ifconfig="fastorder/general/enabled" before="minicart">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Fast Order</argument>
+                    <argument name="path" xsi:type="helper" helper="Bss\FastOrder\Helper\Data::getUrlShortcut">
+                        <param name="name">value</param>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

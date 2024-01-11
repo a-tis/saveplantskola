@@ -1,0 +1,37 @@
+<div class="footer_container">
+	<div class="footer_block_content">
+        <div class="footer_left footer_column">
+        
+        <?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_1')->toHtml();?>
+        </div>
+        <div class="footer_middle footer_column">
+          <?php
+            echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_2')->toHtml();?>
+        </div>
+        <div class="footer_right footer_column"> 
+          <?php
+            echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer_block_3')->toHtml();?>    
+        </div> 
+        
+        
+        
+         
+	</div>
+    
+    
+</div>
+<script>
+require(['jquery'], function ($) {
+$( ".footer_block_content .footer_column" ).click(function() {
+        var mainObj = jQuery(this);
+         if(mainObj.hasClass('open')){ 
+               mainObj.removeClass('open');
+               mainObj.addClass('close');
+         }else{
+              mainObj.removeClass('close');
+               mainObj.addClass('open');
+         }
+    });
+
+});
+</script>

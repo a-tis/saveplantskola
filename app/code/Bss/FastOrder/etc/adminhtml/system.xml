@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_FastOrder
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="bss" sortOrder="300">
+            <label>Bss Commerce</label>
+        </tab>
+        <section id="fastorder" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Fast Order</label>
+            <tab>bss</tab>
+            <resource>Bss_FastOrder::config_fastorder</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Version 1.3.1]]></comment>
+                </field>
+
+                <field id="list_template" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Fast Order Form Template</label>
+                    <source_model>Bss\FastOrder\Model\Config\Source\FastOrderTemplate</source_model>
+                </field>
+
+                <field id="number_of_line" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Number of Lines&nbsp;<span style="color: #D40707;">*</span>]]></label>
+                    <validate>validate-greater-than-zero required-entry validate-digits</validate>
+                    <comment><![CDATA[Default lines shown.]]></comment>
+                </field>
+
+                <field id="automplete_min_char" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Autocomplete Minimum Characters</label>
+                    <comment><![CDATA[Number of characters entered to show autocompleted results]]></comment>
+                    <validate>validate-greater-than-zero validate-digits</validate>
+                </field>
+
+                <field id="max_results_show" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Max Results to Show</label>
+                    <comment><![CDATA[Number of results in the autocomplete box. When the box is empty, the default value is 5.]]></comment>
+                    <validate>validate-greater-than-zero validate-digits</validate>
+                </field>
+
+                <field id="main_color" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Main Color</label>
+                    <validate>jscolor</validate>
+                </field>
+
+               <field id="active_fastorder_in" translate="label" type="multiselect" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position of Fast Order Shortcut</label>
+                    <source_model>Bss\FastOrder\Model\Config\Source\FastOrderLinkPosition</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+
+                <field id="cms_url_key" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Shortcut URL Key</label>
+                    <comment><![CDATA[Shortcut url key for fast order]]></comment>
+                    <depends><field id="active_shortcut">1</field></depends>
+                </field>
+
+                <field id="active_customer_groups" translate="label" type="multiselect" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled for Customer Groups</label>
+                    <source_model>Bss\FastOrder\Model\Config\Source\Customer</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+
+            </group>
+
+            <group id="prepopulated_product" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Pre-populated Products</label>
+
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="action" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Action</label>
+                    <source_model>Bss\FastOrder\Model\Config\Source\PrepopulatedAction</source_model>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+                <field id="product_selector" translate="label" type="hidden" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Selected Products</label>
+                    <comment><![CDATA[Click the left icon and select product IDs; or enter multiple IDs separted by commas without spaces]]></comment>
+                    <frontend_model>Bss\FastOrder\Block\Adminhtml\Config\ProductSelector</frontend_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                        <field id="action">manual</field>
+                    </depends>
+                </field>
+                <field id="max_results_show" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Max result to show&nbsp;<span style="color: #D40707;">*</span>]]></label>
+                    <validate>validate-greater-than-zero required-entry validate-digits</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                        <field id="action">automation</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="additional_extensions" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Recommended Extensions</label>
+                <frontend_model>Bss\FastOrder\Block\Adminhtml\Config\AdditionalExtension</frontend_model>
+            </group>
+
+        </section>
+    </system>
+</config>

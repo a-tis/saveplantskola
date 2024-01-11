@@ -1,0 +1,104 @@
+<?php
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_FastOrder
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+?>
+<?php
+/**
+ * @var \Bss\FastOrder\Block\FastOrder $block
+ */
+?>
+<?php
+$product = $block->getProduct();
+$sortOrder = $block->getSortOrder();
+?>
+<script type="text/x-magento-init">
+    {
+    "*":
+        {
+            "Bss_FastOrder/js/custom/price/option": {
+                "priceConfig" : <?php echo $block->getJsonConfigPrice(); ?>
+            }
+        }
+    }
+</script>
+
+<input type="hidden" class="bss-row-select" value="<?php echo $sortOrder; ?>">
+<input type="hidden" class="bss-row-product-type" value="<?php echo $product->getTypeId(); ?>">
+<div class="bss-product-info">
+    <div id="closePopup">
+        <span type="button" class="closePopup" aria-label="Close">Close</span>
+    </div>
+    <div id="pagePopup">
+        <span id="currentNumber">0</span>/<span id="totalNumber">0</span>
+    </div>
+    <div class="next-previous-button">
+        <button type="button" class="next-previous previous">&nbsp;</button>
+        <button type="button" class="next-previous next">&nbsp;</button>
+    </div>
+    <img class="photo image" src="<?php echo $block->getProductImage(); ?>">
+    <div class="product-name">
+        <strong class="product name"><?php echo $product->getName(); ?></strong>
+    </div>
+    <div class="bss-product-info-price">
+        <div class="price-box" data-role-fastorder="priceBox">
+            <span class="price-container">
+                <span id="bss-product-price-<?php echo $product->getId(); ?>"
+                      data-price-amount="<?php echo $product->getFinalPrice(); ?>" data-price-type="finalPrice"
+                      class="price-wrapper final-price"></span>
+                <?php if ($block->isDisplayBothPrices()) : ?>
+                    <p><?php echo __('Excl. Tax: ') ?>
+                        <span id="bss-product-price-excl-tax-<?php echo $product->getId(); ?>"
+                            data-price-amount="<?php echo $product->getFinalPrice(); ?>" data-price-type="basePrice"
+                            class="price-wrapper base-price"></span>
+                    </p>
+                <?php endif; ?>
+            </span>
+        </div>
+    </div>
+</div>
+
+<form id="bss-fastorder-form-option" method="post" enctype="multipart/form-data"
+      data-hasrequired="<?php /* @escapeNotVerified */
+      echo __('* Required Fields') ?>"
+>
+    <div class="bss-product-option">
+        <input type="hidden" class="bss-product-child-id" value="<?php echo $product->getId(); ?>">
+        <?php
+        echo $block->getOptionTemplate();
+
+        if ($block->getLayout()->getBlock('product.info.options')) {
+            echo $block->getLayout()->getBlock('product.info.options')
+                ->setProduct($product)
+                ->toHtml();
+        }
+        ?>
+
+    </div>
+    <div class="bss-box-button">
+        <div class="fieldset"></div>
+        <div class="actions">
+            <button type="button" class="action bss-fastorder-button bss-cancel-option<?php echo $product->getId(); ?>" productId="<?php echo $product->getId(); ?>" id="bss-cancel-option">
+                    <span><?php /* @escapeNotVerified */
+                        echo __('Cancel') ?></span>
+            </button>
+            <button type="submit" class="action bss-fastorder-button main-color bss-select-option<?php echo $product->getId(); ?>" productType="<?= $product->getTypeId() ?>" productId="<?php echo $product->getId(); ?>" id="bss-select-option">
+                    <span><?php /* @escapeNotVerified */
+                        echo __('Select') ?></span>
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceContainer name="before.body.end">
+			<block class="Magento\Framework\View\Element\Template" template="Magento_Theme::html/footer.phtml" name="before_body_end_phtml"/>
+		</referenceContainer>
+		<referenceContainer name="header.container">
+             <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::html/header_panel.phtml" name="header_panel_block"/>
+        </referenceContainer>
+         <move element="header_panel_block" destination="header.panel" before="store_language" />
+        <referenceContainer name="footer-container" remove="true"/>
+	</body>
+</page>
